@@ -1,11 +1,12 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
-return {
+local options = {
   opt = {
     -- set to true or false etc.
-    relativenumber = true, -- sets vim.opt.relativenumber
+    mouse = "",
     number = true, -- sets vim.opt.number
+    relativenumber = true, -- sets vim.opt.relativenumber
     spell = false, -- sets vim.opt.spell
-    signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+    signcolumn = "yes", -- sets vim.opt.signcolumn to auto
     wrap = false, -- sets vim.opt.wrap
   },
   g = {
@@ -20,11 +21,14 @@ return {
   },
 }
 -- If you need more control, you can use the function()...end notation
--- return function(local_vim)
---   local_vim.opt.relativenumber = true
---   local_vim.g.mapleader = " "
---   local_vim.opt.whichwrap = vim.opt.whichwrap - { 'b', 's' } -- removing option from list
---   local_vim.opt.shortmess = vim.opt.shortmess + { I = true } -- add to option list
---
---   return local_vim
--- end
+return function(local_vim)
+  local_vim.opt.listchars = vim.opt.listchars:append("space:·")
+  
+  for scope, table in pairs(options) do
+    for setting, value in pairs(table) do
+      local_vim[scope][setting] = value
+    end
+  end
+
+  return local_vim
+end
