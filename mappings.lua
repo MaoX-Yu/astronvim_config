@@ -34,16 +34,16 @@ return {
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
     -- my config
-    ["Q"] = { "q", desc = "Create macros"},
-    ["q"] = { "@", desc = "Use macros"},
-    ["<C-a>"] = { "ggvG$", desc = "Select all"},
+    ["Q"] = { "q", desc = "Create macros" },
+    ["q"] = { "@", desc = "Use macros" },
+    ["<C-a>"] = { "ggvG$", desc = "Select all" },
     ["gh"] = { "^", desc = "Move to the start of line" },
     ["gl"] = { "$", desc = "Move to the end of line" },
     -- rename
     ["<leader>r"] = { name = "󰑕 Rename" },
     ["<leader>rn"] = {
       function() vim.lsp.buf.rename() end,
-      desc = "Rename current symbol"
+      desc = "Rename current symbol",
     },
   },
   v = {
@@ -56,6 +56,6 @@ return {
     -- ["<esc>"] = false,
 
     --my config
-    ["<esc><esc>"] = { "<c-\\><c-n>", desc = "Enter normal mode" }
+    ["<esc><esc>"] = { "<c-\\><c-n>", desc = "Enter normal mode" },
   },
 }
