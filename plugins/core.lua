@@ -36,7 +36,6 @@ return {
         { type = "padding", val = 3 },
         opts.section.footer,
       }
-
       return opts
     end,
   },
@@ -57,7 +56,6 @@ return {
     opts = function(_, opts)
       local luasnip = require "luasnip"
       local cmp = require "cmp"
-
       local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -97,9 +95,12 @@ return {
           end
         end, { "i", "s" }),
       })
-
       return opts
     end,
+  },
+  {
+    "mfussenegger/nvim-dap",
+    enabled = true,
   },
   {
     "folke/which-key.nvim",
@@ -110,7 +111,6 @@ return {
           position = "top",
         },
       })
-
       return opts
     end,
   },
