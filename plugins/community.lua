@@ -7,6 +7,14 @@ return {
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   { import = "astrocommunity.bars-and-lines.heirline-vscode-winbar" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = function(_, opts)
+      opts.integrations.noice = true
+      return opts
+    end,
+  },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.pack.python-ruff" },
   {
@@ -25,4 +33,12 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.split-and-window.edgy-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
+  {
+    "folke/noice.nvim",
+    opts = function(_, opts)
+      opts.lsp.progress = { enabled = false }
+      opts.presets.lsp_doc_border = true
+      return opts
+    end,
+  },
 }
