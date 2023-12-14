@@ -27,10 +27,10 @@ return function(local_vim)
   local_vim.opt.listchars = vim.opt.listchars + "space:·"
 
   -- windows settings
-  if require("user.utils").is_windows() then
+  if require("user.utils").is_win() then
     -- local_vim.opt.shell = "pwsh"
   end
-  
+
   for scope, table in pairs(options) do
     for setting, value in pairs(table) do
       local_vim[scope][setting] = value
