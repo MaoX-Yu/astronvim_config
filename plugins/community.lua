@@ -10,6 +10,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    optional = true,
     opts = function(_, opts)
       opts.integrations.noice = true
       return opts
@@ -19,6 +20,7 @@ return {
   { import = "astrocommunity.pack.python-ruff" },
   {
     "mfussenegger/nvim-dap-python",
+    optional = true,
     config = function(_, opts)
       local path = require("mason-registry").get_package("debugpy"):get_install_path()
       if require("user.utils").is_win() then
@@ -35,6 +37,7 @@ return {
   { import = "astrocommunity.utility.noice-nvim" },
   {
     "folke/noice.nvim",
+    optional = true,
     opts = function(_, opts)
       opts.lsp.progress = { enabled = false }
       opts.presets.lsp_doc_border = true
