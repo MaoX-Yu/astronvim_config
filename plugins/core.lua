@@ -103,6 +103,10 @@ return {
     enabled = true,
   },
   {
+    "rafamadriz/friendly-snippets",
+    config = function() require("luasnip.loaders.from_vscode").lazy_load { paths = { "./lua/user/snippets" } } end,
+  },
+  {
     "folke/which-key.nvim",
     opts = function(_, opts)
       opts = vim.tbl_extend("force", opts, {
