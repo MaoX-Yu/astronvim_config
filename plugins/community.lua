@@ -41,6 +41,16 @@ return {
     opts = function(_, opts)
       opts.lsp.progress = { enabled = false }
       opts.presets.lsp_doc_border = true
+      opts.routes = opts.routes ~= nil and opts.routes or {} -- check routes is nil or not
+      opts.routes = vim.list_extend(opts.routes, {
+        {
+          filter = {
+            event = "msg_show",
+            kind = "search_count",
+          },
+          opts = { skip = true },
+        },
+      })
       return opts
     end,
   },
