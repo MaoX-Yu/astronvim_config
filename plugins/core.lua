@@ -109,11 +109,19 @@ return {
   {
     "folke/which-key.nvim",
     opts = function(_, opts)
-      opts = vim.tbl_extend("force", opts, {
-        window = {
-          border = "single",
-          position = "top",
-        },
+      opts.window = opts.window ~= nil and opts.window or {}
+      opts.key_labels = opts.key_labels ~= nil and opts.key_labels or {}
+      opts.window = vim.tbl_extend("force", opts.window, {
+        border = "single",
+        position = "top",
+      })
+      opts.key_labels = vim.tbl_extend("force", opts.key_labels, {
+        ["<space>"] = "SPC",
+        ["<cr>"] = "CR",
+        ["<tab>"] = "TAB",
+        ["<bs>"] = "BS",
+        ["<esc>"] = "ESC",
+        ["<leader>"] = "Leader",
       })
       return opts
     end,
