@@ -69,7 +69,7 @@ return {
         ["<CR>"] = cmp.mapping.confirm { select = true },
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
-            cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false }
+            cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = true }
             -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
             -- this way you will only jump inside the snippet region
           elseif luasnip.expand_or_locally_jumpable() then
@@ -80,7 +80,7 @@ return {
         end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
-            cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false }
+            cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = true }
           elseif luasnip.jumpable(-1) then
             luasnip.jump(-1)
           else

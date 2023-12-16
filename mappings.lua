@@ -45,6 +45,7 @@ return {
       function() vim.lsp.buf.rename() end,
       desc = "Rename current symbol",
     },
+    ["<leader><leader>"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
   },
   v = {
     -- my config
