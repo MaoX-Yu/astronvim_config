@@ -40,7 +40,7 @@ return {
     ["gh"] = { "^", desc = "Move to the start of line" },
     ["gl"] = { "$", desc = "Move to the end of line" },
     -- rename
-    ["<leader>r"] = { name = "󰑕 Rename" },
+    ["<leader>r"] = { name = "󰑕 Refactor" },
     ["<leader>rn"] = {
       function() vim.lsp.buf.rename() end,
       desc = "Rename current symbol",
